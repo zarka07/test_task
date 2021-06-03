@@ -1,29 +1,24 @@
 <template>
-  <v-app style="margin: 10px; padding: 10px; width: 100%,height:20px">
+  <v-app style="margin: 10px; padding: 10px; width: 100%">
     <v-app-bar class="container" color="white"  
         flat style="margin: 0px; padding: 10px; width: 100%;
-        display:flex;
-        justify-content: space-around;
-        
-        ">
-
+                              display:flex;
+                              justify-content: space-around;">
       <v-card class="login" style="margin-left:10px;margin-right:50px;margin-top:0px;width:auto;
-      display:flex;
-      flex-wrap: wrap;
-      flex-flow: row wrap;
-      justify-content: flex-start;
-      width:160px;
-      " flat tile ><h3>Login Form</h3></v-card>
+                              display:flex;
+                              flex-wrap: wrap;
+                              flex-flow: row wrap;
+                              justify-content: flex-start;
+                              width:160px;" flat tile >
+                              <h3>Login Form</h3></v-card>
       
       <v-card class="card-btn" flat tile style="
-      display: flex;
-       flex-wrap: wrap;
-       flex-flow: row wrap;
-        justify-content: space-evenly;
-        margin-right:10px;
-        margin-top:auto;
-        
-        " >
+                              display: flex;
+                              flex-wrap: wrap;
+                              flex-flow: row wrap;
+                              justify-content: space-evenly;
+                              margin-right:10px;
+                              margin-top:auto;" >
         <v-btn class="btn"
           onmouseover="this.style.color='rgb(76, 38, 247)';" 
           onmouseout="this.style.color='black';"
@@ -51,33 +46,51 @@
       </v-card>
     </v-app-bar>
 
-    <v-main style="display:none">
-        <v-container fluid>
-          <v-form class="">
-              <v-row>
-                <v-card class="">Enter login</v-card>
-                <v-text-field
-                    v-model="login"
-                    label="Login"
-                    outlined
+    <v-main >
+        <v-form class="container" ref="form" v-model="valid" lazy-validation style="width:80%;">
+            <v-row style="display:flex;">
+              <div class="container" style="display:flex;justify-content: space-evenly;
+                              height:auto;width:100%;
+                              align-items:baseline;flex-wrap: wrap;">
+                <v-col cols="6" sm="4" style="">
+                  <v-text-field
+                    style="flex-flow: row wrap;
+                              justify-content: center;"
+                    v-model="login" label="Login" outlined
                     :rules="[rules.required, rules.login, rules.min]"
                   ></v-text-field>
-                <v-card class="">Enter password</v-card>
+                </v-col>
+
+                <v-col cols="6" sm="4" style="">
                   <v-text-field
-                    v-model="password"
-                    :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-                    :rules="[rules.required, rules.min]"
-                    :type="show ? 'text' : 'password'"
-                    name="input-10-2"
-                    label="Password"
-                    hint="At least 8 characters"
-                    @click:append="show = !show"
+                    style="flex-flow: row wrap;
+                              justify-content: center;"
+                    v-model="password" label="Password"   
                     outlined
+                      :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                      :rules="[rules.required, rules.min]"
+                      :type="show ? 'text' : 'password'"
+                      name="input-10-2"
+                      hint="At least 8 characters"
+                      @click:append="show = !show"
                   ></v-text-field>
-              </v-row>
-            </v-form>
-        </v-container>
-    </v-main>
+                </v-col>
+                <v-btn
+                  style="flex-flow: row wrap;
+                              justify-content: center;"
+                  :disabled="!valid"
+                  color="success"
+                  class="mr-4"
+                  @click="validate"
+                >
+                  Enter
+                </v-btn>
+              </div>
+            </v-row>
+            
+          
+        </v-form>
+      </v-main>
   </v-app>
 </template>
 
@@ -89,6 +102,7 @@ export default {
   },
   data () {
     return {
+        valid: true,
         show: false,
         login:'',
         password: '',
@@ -101,6 +115,13 @@ export default {
         },
       }
   }
+  },
+  methods:{
+    validate () {
+        if(this.$refs.form.validate())
+          alert('Success!')
+        
+      },
   }
 };
 </script>
@@ -115,5 +136,13 @@ export default {
 .container{
   display: flex;
   flex-direction: row;
+}
+div.container{
+  background-color:rgb(235, 243, 235);
+  border-radius: 3px;
+  height: 100px;
+}
+fieldset{
+  background-color: white;
 }
 </style>
