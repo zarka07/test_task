@@ -12,7 +12,6 @@
       flex-wrap: wrap;
       flex-flow: row wrap;
       justify-content: flex-start;
-      
       width:160px;
       " flat tile ><h3>Login Form</h3></v-card>
       
@@ -23,20 +22,32 @@
         justify-content: space-evenly;
         margin-right:10px;
         margin-top:auto;
-         
+        
         " >
         <v-btn class="btn"
-          onmouseover="this.style.color='rgb(93, 6, 233)';" 
+          onmouseover="this.style.color='rgb(76, 38, 247)';" 
           onmouseout="this.style.color='black';"
-          rounded text style="display:block;font-size:10px;margin-left:5px;margin-top:auto;margin-right:5px;margin-bottom:5px;">About Me</v-btn>
+          rounded text style="
+                              display:block;font-size:10px;
+                              margin-left:10px;margin-top:auto;margin-right:5px;
+                              margin-bottom:5px;
+                              text-transform:none;">About Me</v-btn>
         <v-btn class="btn"
-          onmouseover="this.style.color='rgb(93, 6, 233)';" 
+          onmouseover="this.style.color='rgb(76, 38, 247)';" 
           onmouseout="this.style.color='black';"
-          rounded text style="display:block;font-size:10px;margin-left:5px;margin-top:auto;margin-right:5px;margin-bottom:5px;">Your Files</v-btn>
+          rounded text style="
+                              display:block;font-size:10px;
+                              margin-left:10px;margin-top:auto;
+                              margin-right:5px;margin-bottom:5px;
+                              text-transform:none;">Your Files</v-btn>
         <v-btn class="btn" 
-          onmouseover="this.style.color='rgb(93, 6, 233)';" 
-          onmouseout="this.style.color='black';"
-          rounded text style="display:block;font-size:10px;margin-left:5px;margin-top:auto;margin-right:5px;margin-bottom:5px;">Access Settings</v-btn>
+          onmouseover="this.style.color='rgb(76, 38, 247)';" 
+          onmouseout="this.style.color='black'"
+          rounded text style="
+                              display:block;font-size:10px;
+                              margin-left:10px;margin-top:auto;
+                              margin-right:5px;margin-bottom:5px;
+                              text-transform:none;">Access Settings</v-btn>
       </v-card>
     </v-app-bar>
 
@@ -74,11 +85,8 @@
 
 export default {
   name: 'App',
-
   components: {
-    
   },
-
   data () {
     return {
         show: false,
@@ -87,7 +95,6 @@ export default {
         rules: {
           required: value => !!value || 'Required.',
           min: v => v.length >= 8 || 'Min 8 characters',
-          
           login: value => {
             const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             return pattern.test(value) || 'Invalid e-mail.'
@@ -98,12 +105,12 @@ export default {
 };
 </script>
 <style>
-
 .btn{
   background-color:rgb(233, 231, 245);  
 }
+
 .btn:hover{
-  color:rgb(93, 6, 233);
+  color:rgb(231, 228, 245);
 }
 .container{
   display: flex;
