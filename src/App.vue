@@ -52,11 +52,11 @@
       </v-card>
     </v-app-bar>
 
-    <v-main >
+    <v-main>
         <v-form class="container" ref="form" v-model="valid" lazy-validation style="width:80%;">
-            <v-row style="display:flex;">
+            <v-row style="display:flex;min-width:275px">
               <div class="container" style="display:flex;justify-content: space-evenly;
-                              height:auto;width:60%;
+                              height:auto;width:100%;
                               align-items:baseline;flex-wrap: wrap;">
                 <v-col cols="6" sm="4" style="">
                   <v-text-field
@@ -67,10 +67,11 @@
                   ></v-text-field>
                 </v-col>
 
-                <v-col cols="6" sm="5" style="">
+                <v-col cols="6" sm="4" style="">
                   <v-text-field
                     style="flex-flow: row wrap;
-                              justify-content: center;"
+                              justify-content: center;
+                              "
                     v-model="password" label="Password"   
                     outlined
                       :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
@@ -149,7 +150,7 @@ export default {
 }
 
 div.container{
-  background-color:rgb(235, 243, 235);
+  background-color:rgb(239, 245, 239);
   border-radius: 3px;
   
 }
