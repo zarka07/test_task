@@ -1,5 +1,5 @@
 <template>
-  <v-app style="margin: auto; padding: auto; width: 100%">
+  <v-app style="margin: auto; padding: auto; width: auto">
     <v-app-bar class="container" color="white"  
         flat style="margin: 0px; padding: 10px;
                               display:flex;
@@ -55,8 +55,8 @@
     <v-main>
         <v-form class="container" ref="form" v-model="valid" lazy-validation style="width:80%;">
             <v-row style="display:flex;min-width:275px">
-              <div id="login" :height="height" class="container" style="display:flex;justify-content: space-evenly;
-                              height:auto;width:100%;
+              <div id="login" class="container" style="display:flex;justify-content: space-evenly;
+                              height:auto;width:80%;
                               align-items:baseline;flex-wrap: wrap;">
                 <v-col cols="6" sm="4" style="">
                   <v-text-field
