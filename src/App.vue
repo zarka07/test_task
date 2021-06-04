@@ -52,13 +52,14 @@
       </v-card>
     </v-app-bar>
 
-    <v-main>
-        <v-form class="container" ref="form" v-model="valid" lazy-validation style="width:80%;">
-            <v-row style="display:flex;min-width:275px">
-              <div id="login" class="container" style="display:flex;justify-content: space-evenly;
-                              height:auto;width:80%;
+    <v-main class="container" style="width:60%">
+        <v-form class="container" ref="form" v-model="valid" lazy-validation 
+                style="width:inherit;margin:auto;">
+            <v-row style="display:flex;">
+              <div  class="container" style="display:flex;justify-content: space-evenly;
+                              height:auto;width:100%;
                               align-items:baseline;flex-wrap: wrap;">
-                <v-col cols="6" sm="4" style="">
+                <v-col cols="6" sm="4" style="margin:0px">
                   <v-text-field
                     style="flex-flow: row wrap;
                               justify-content: center;"
@@ -67,7 +68,7 @@
                   ></v-text-field>
                 </v-col>
 
-                <v-col cols="6" sm="4" style="">
+                <v-col cols="6" sm="4" style="margin:0px">
                   <v-text-field
                     style="flex-flow: row wrap;
                               justify-content: center;
@@ -152,7 +153,6 @@ export default {
 div.container{
   background-color:rgb(239, 245, 239);
   border-radius: 3px;
-  
 }
 fieldset{
   background-color: white;
