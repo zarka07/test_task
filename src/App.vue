@@ -21,7 +21,7 @@
                               display: flex;
                               flex-wrap: wrap;
                               flex-flow: row wrap;
-                              justify-content: right;
+                              justify-content: flex-end;
                               align:right;
                               
                               margin-top:auto;" >
@@ -55,7 +55,7 @@
     <v-main>
         <v-form class="container" ref="form" v-model="valid" lazy-validation style="width:80%;">
             <v-row style="display:flex;min-width:275px">
-              <div class="container" style="display:flex;justify-content: space-evenly;
+              <div id="login" :height="height" class="container" style="display:flex;justify-content: space-evenly;
                               height:auto;width:100%;
                               align-items:baseline;flex-wrap: wrap;">
                 <v-col cols="6" sm="4" style="">
@@ -134,10 +134,10 @@ export default {
   /*computed: {
       width () {
         switch (this.$vuetify.breakpoint.name) {
-          case 'sm': return 400
-          case 'md': return 500
+          case 'sm': return 100
+          case 'md': return 300
            
-          case 'lg': return 160
+          case 'lg': return 
           
         }
       },
