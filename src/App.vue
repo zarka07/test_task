@@ -1,23 +1,28 @@
 <template>
   <v-app style="margin: 10px; padding: 10px; width: 100%">
     <v-app-bar class="container" color="white"  
-        flat style="margin: 0px; padding: 10px; width: 100%;
+        flat style="margin: 0px; padding: 10px;
                               display:flex;
-                              justify-content: space-around;">
-      <v-card class="login" style="margin-left:10px;margin-right:50px;margin-top:0px;width:auto;
-                              display:flex;
+                              justify-content: center;
+                              margin:auto;
+                              align-items:baseline;
+                              ">
+      <v-card class="login" style="margin-left:10px;margin-right:50px;margin-top:5px;width:auto;
+                              
                               flex-wrap: wrap;
                               flex-flow: row wrap;
-                              justify-content: flex-start;
-                              width:160px;" flat tile >
+                              justify-content: left;
+                              width:160px;
+                              " flat tile >
                               <h3>Login Form</h3></v-card>
       
       <v-card class="card-btn" flat tile style="
                               display: flex;
                               flex-wrap: wrap;
                               flex-flow: row wrap;
-                              justify-content: space-evenly;
-                              margin-right:10px;
+                              justify-content: right;
+                              align:right;
+                              
                               margin-top:auto;" >
         <v-btn class="btn"
           onmouseover="this.style.color='rgb(76, 38, 247)';" 
@@ -87,8 +92,6 @@
                 </v-btn>
               </div>
             </v-row>
-            
-          
         </v-form>
       </v-main>
   </v-app>
@@ -116,13 +119,27 @@ export default {
       }
   }
   },
+  mounted () {
+      console.log(this.$vuetify.breakpoint)
+    },
   methods:{
     validate () {
         if(this.$refs.form.validate())
           alert('Success!')
         
       },
-  }
+  },
+  /*computed: {
+      width () {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'sm': return 400
+          case 'md': return 500
+           
+          case 'lg': return 160
+          
+        }
+      },
+    },*/
 };
 </script>
 <style>
@@ -130,17 +147,10 @@ export default {
   background-color:rgb(233, 231, 245);  
 }
 
-.btn:hover{
-  color:rgb(231, 228, 245);
-}
-.container{
-  display: flex;
-  flex-direction: row;
-}
 div.container{
   background-color:rgb(235, 243, 235);
   border-radius: 3px;
-  height: 100px;
+  
 }
 fieldset{
   background-color: white;
